@@ -17,7 +17,10 @@ for(const box of boxes){
 
 function dragStart() {
     console.log('drag start')
+    this.className += ' hold'
+    setTimeout(()=> this.className = 'invisible', 0)
 }
+    
 
 function dragEnd() {
     console.log('drag end')
