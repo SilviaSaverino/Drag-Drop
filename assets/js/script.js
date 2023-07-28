@@ -1,6 +1,13 @@
 const fill = document.querySelectorAll('.fill')
 const box = document.querySelectorAll('.box')
 
+fill.forEach(fill => {
+    fill.addEventListener('dragstart', dragStart);
+});
+fill.forEach(fill => {
+    fill.addEventListener('dragend', dragEnd);
+});
+
 function dragStart() {
     console.log('drag start')
 }
