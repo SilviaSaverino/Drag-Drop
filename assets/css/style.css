@@ -1,0 +1,30 @@
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #157B91;
+    margin: 1px;
+}
+
+.pieces {
+    display: flex;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    object-fit: fill;
+    border: 2px solid #BE2478;
+    margin: 2px;
+}
+
+body {
+    background-color: #1C1B21 !important;
+    text-align: center!important;
+}
