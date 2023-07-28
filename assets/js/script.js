@@ -1,5 +1,5 @@
 const fill = document.querySelectorAll('.fill')
-const box = document.querySelectorAll('.box')
+const boxes = document.querySelectorAll('.box')
 
 fill.forEach(fill => {
     fill.addEventListener('dragstart', dragStart);
@@ -7,6 +7,13 @@ fill.forEach(fill => {
 fill.forEach(fill => {
     fill.addEventListener('dragend', dragEnd);
 });
+
+for(const box of boxes){
+    box.addEventListener('dragover', dragOver),
+    box.addEventListener('dragenter', dragEnter),
+    box.addEventListener('dragleave', dragLeave),
+    box.addEventListener('drop', Drop)
+}
 
 function dragStart() {
     console.log('drag start')
@@ -16,12 +23,8 @@ function dragEnd() {
     console.log('drag end')
 }
 
-function dragHover() {
-    console.log('drag hover')
-}
-
-function dragDrop() {
-    console.log('drag drop')
+function dragOver() {
+    console.log('drag over')
 }
 
 function dragEnter() {
@@ -30,4 +33,8 @@ function dragEnter() {
 
 function dragLeave() {
     console.log('drag leave')
+}
+
+function Drop() {
+    console.log('drag drop')
 }
