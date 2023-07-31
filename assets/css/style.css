@@ -29,6 +29,10 @@ img {
     border: 2px solid #1aec2b;
 }
 
+.fill {
+    
+}
+
 .hovered {
     background-color: #999797;
     border-color: #fafafa;

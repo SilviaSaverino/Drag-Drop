@@ -24,14 +24,17 @@ function dragStart() {
 
 function dragEnd() {
     console.log('drag end')
+    this.className = 'fill'
 }
 
-function dragOver() {
+function dragOver(e) {
     console.log('drag over')
+    e.preventDefault()
 }
 
-function dragEnter() {
+function dragEnter(e) {
     console.log('drag enter')
+    e.preventDefault()
 }
 
 function dragLeave() {
@@ -40,4 +43,6 @@ function dragLeave() {
 
 function Drop() {
     console.log('drag drop')
+    this.className = 'box'
+    this.append(fill)
 }
