@@ -1,6 +1,7 @@
 # Drag & Drop
-## Drag Events in Web Development
+Simple web application that allows users to drag and drop images onto different boxes.
 
+## Drag Events in Web Development
 The drag events are a set of interactions related to Drag-and-Drop functionality in web development. They enable you to create interactive user interfaces, allowing elements to be moved around with user interactions. Below are the main drag events and their default behaviors:
 
 ### Drag Start:
@@ -25,7 +26,7 @@ The drag events are a set of interactions related to Drag-and-Drop functionality
 
 
 ## JS Notes
-#### Line 18 
+#### Line 18: 
 ```
 function dragStart() {
     console.log('drag start')
@@ -35,3 +36,46 @@ function dragStart() {
 ```
 - Inside the setTimeout function, the code sets the className of the element to 'invisible' to visually hide the element. Even with a delay of 0 milliseconds, using setTimeout is crucial in this scenario. When the browser encounters the setTimeout function, it places the code inside the setTimeout function at the end of the current event loop. This allows the browser to complete its current tasks, including updating the DOM with the newly added 'hold' class, before executing the code inside the setTimeout function.
 - Without using the setTimeout function, if the 'invisible' class were applied directly after adding the 'hold' class, the element would become invisible during the 'hold' process. This would lead to a poor user experience (UX) as the user won't be able to see the selected image anymore.
+
+#### Line 3:
+```
+const fill = document.querySelectorAll('.fill');
+const boxes = document.querySelectorAll('.box');
+const images = Array.from(fill);
+```
+- The original code used querySelectorAll to select all elements with the class "fill" and "box". However, the querySelectorAll returns a NodeList, which cannot be directly manipulated like an array. To fix this, the code creates an array images using Array.from(fill), which allows us to work with the images as an array.
+
+#### Line 6:
+```
+fill.forEach((fill, index) => {
+    fill.addEventListener('dragstart', (e) => dragStart(e, index));
+    fill.addEventListener('dragend', dragEnd);
+});
+```
+- The dragStart function needed to know which image was being dragged, but the original code did not provide that information. To address this, the code now uses the forEach method with the index to add the index information as an argument to the dragStart function.
+
+#### Line 17:
+```
+function dragStart(e, index) {
+    console.log('drag start');
+    draggedIndex = index;
+    this.className += ' hold';
+    setTimeout(() => this.classList.add('invisible'), 0);
+}
+
+```
+- The dragStart function was updated to receive the event (e) and the index of the image being dragged. The function sets the draggedIndex variable to the index to keep track of the image being dragged. It also adds the 'hold' and 'invisible' classes to the dragged image.
+
+#### Line 46:
+```
+function Drop() {
+    console.log('drag drop');
+    if (draggedIndex !== null) {
+        const draggedImage = images[draggedIndex];
+        this.append(draggedImage);
+        draggedIndex = null;
+        this.classList.remove('hovered');
+    }
+}
+```
+- The Drop function was modified to handle the drop event properly. It checks if draggedIndex is not null, meaning an image is being dragged. Then, it gets the dragged image from the images array using the draggedIndex and appends it to the dropped box. Finally, it resets the draggedIndex to null.

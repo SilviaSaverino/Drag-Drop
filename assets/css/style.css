@@ -16,6 +16,16 @@
     display: flex;
 }
 
+.hovered {
+    border-color: #1aec2b;
+    border-style: dotted;
+}
+
+
+.hold {
+    border: 2px solid #1aec2b;
+}
+
 img {
     width: 120px;
     height: 120px;

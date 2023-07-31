@@ -17,7 +17,7 @@ for (const box of boxes) {
 function dragStart(e, index) {
     console.log('drag start');
     draggedIndex = index;
-    this.classList.add('hold');
+    this.className += ' hold';
     setTimeout(() => this.classList.add('invisible'), 0);
 }
 
@@ -49,5 +49,6 @@ function Drop() {
         const draggedImage = images[draggedIndex];
         this.append(draggedImage);
         draggedIndex = null;
+        this.classList.remove('hovered');
     }
 }
