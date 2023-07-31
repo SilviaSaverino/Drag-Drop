@@ -29,16 +29,6 @@ img {
     border: 2px solid #1aec2b;
 }
 
-.fill {
-    
-}
-
-.hovered {
-    background-color: #999797;
-    border-color: #fafafa;
-    border: dashed;
-}
-
 body {
     background-color: #1C1B21 !important;
     text-align: center!important;
