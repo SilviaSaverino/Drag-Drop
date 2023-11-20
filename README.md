@@ -1,6 +1,8 @@
 # Drag & Drop
 Simple web application that allows users to drag and drop images onto different boxes.
 
+Link to live site: https://silviasaverino.github.io/Drag-Drop/
+
 ## Drag Events in Web Development
 The drag events are a set of interactions related to Drag-and-Drop functionality in web development. They enable you to create interactive user interfaces, allowing elements to be moved around with user interactions. Below are the main drag events and their default behaviors:
 

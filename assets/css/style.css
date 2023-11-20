@@ -1,5 +1,14 @@
+
+#heading {
+    color: #BE2478;
+}
+
+span {
+    color: #157B91;
+}
+
 .container {
-    margin: auto;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     padding: 10px;
